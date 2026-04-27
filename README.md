@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# 📍 CEP Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para busca de endereços a partir de CEP, consumindo a API pública do [ViaCEP](https://viacep.com.br).
 
-Currently, two official plugins are available:
+🔗 **[Acesse o projeto](https://cep-finder-five.vercel.app)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React](https://react.dev) com [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Vite](https://vitejs.dev)
+- [ViaCEP API](https://viacep.com.br)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Busca de endereço por CEP em tempo real
+- Validação de entrada: CEP vazio, incompleto ou inexistente
+- Estado de carregamento durante a requisição
+- Tratamento de erro para falhas de rede
+- Interface responsiva com tema escuro
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Como rodar localmente
+
+```bash
+# Clone o repositório
+git clone https://github.com/joaoaquino-dev/cep-finder.git
+
+# Acesse a pasta
+cd cep-finder
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse em `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## O que aprendi
+
+- Consumo de API externa com `fetch` e `async/await`
+- Gerenciamento de estados de UI: loading, erro e sucesso
+- Tipagem de respostas de API com TypeScript
+- Validação e tratamento de erros em formulários
+
+---
+
+Desenvolvido por [João Aquino](https://www.linkedin.com/in/joão-aquino-dev)
